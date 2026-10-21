@@ -1,0 +1,393 @@
+body{
+    background-image: url("Images/greyBG.png"); 
+}
+
+#header_bar{
+    background: linear-gradient(to right, #7a664a, rgb(228, 193, 167), #7a644a);
+    height: 60px;
+    border-color: #A68F74;
+    border-style: solid;
+
+}
+
+#web_title{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 40px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    margin-top:7px;
+}
+ 
+#header{
+    background-image: url("Images/BOrchid.png");
+    height: 350px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+#company_title{
+    font-style: italic;
+    font-family: 'Times New Roman';
+    font-size: 80px;
+    color: white;
+    margin: auto;
+    text-align: center;
+
+}
+
+/*CSS for navigation bar START*/
+#navigation_bar{ 
+   background: linear-gradient(to right , #7a664a, rgb(228, 193, 167), #7a644a);
+    height: 30px;
+    border-color: #A68F74;
+    border-style: solid;
+    margin-bottom: 30px;
+    text-align: center;
+    word-spacing: 23px;
+    padding-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold; 
+    font-size: larger;
+}
+
+i{
+    color:#644a2c;
+    margin-left:5px;
+}
+/*CSS for navigation END*/
+
+/*CSS for navigation hyperlink START*/
+a:link{
+    color:rgb(0, 0, 0);
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:visited{
+    color:rgb(124, 99, 84);
+}
+
+a:hover{
+    color: rgb(255, 255, 255);
+}
+
+a:active{
+    color: white;
+}
+/*CSS for navigation hyperlink END*/
+
+.card_wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+
+.card-container{
+    max-width: 1650px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    margin: 0 auto;
+}
+
+.card {
+    display: flex;
+    width: 500px;
+    background: #EFEAE4;
+    border-radius:116px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-style: solid;
+    border-color: #A68F74;
+    border-width: 5px;
+}
+
+
+.card img{
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    border-style: solid;
+    border-color: #A68F74;
+    border-width: 5px;
+    border-radius: 300px;
+}
+
+.card-content{
+    padding: 15px;
+    width: 100%;
+}
+
+.description{
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    color:black;
+    text-align: center;
+}
+
+.price{
+    font-family: 'Times New Roman', Times, serif;
+    color:black;
+    text-align: center;
+    font-weight: bold;
+}
+
+.card-content h3 {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.add_to_cart{
+    margin-top: 10px;
+    padding: 10px;
+    background: linear-gradient(to bottom right, #7a664a, rgb(228, 193, 167), #7a644a);
+    color: #7a664a;
+    border-style: solid;
+    border-radius: 20px;
+    border-color: #7a644a;
+    border-width: 5px;
+    height:50px;
+    cursor: pointer;
+    width: 40%;
+    transition: transform 0.2s ease, background-color 0.2s ease; 
+}
+
+.add_to_cart:hover {
+    transform: scale(1.05);
+    
+}
+
+.card img{
+    transition: transform 0.5s ease;
+}
+.card img:hover{
+    transform: scale(1.02);
+}
+
+.card:hover {
+    transition: transform 0.5s ease;
+    transform: translateY(-5px)
+}
+
+#footer{
+    height: 300px;
+    width: 100%;
+    margin-top: 30px;
+    background: linear-gradient(to right, #7a664a, rgb(228, 193, 167), #7a644a);
+    border-style:solid;
+    border-color: #7a664a;
+}
+
+#footerheading{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 40px;
+    color: #7a664a;
+    text-align: center;
+    margin-top:20px;
+}
+
+/*CSS FOR ADMIN LOGIN*/
+
+.login-container{
+    font-size: 25px;
+    color:#644a2c;
+    text-align: center;
+    width: 600px;
+    margin: 100px auto;
+    padding-top: 1px;
+    padding: 20px;
+    background: #EFEAE4;
+    border: 5px;
+    border-style: solid;
+    border-color: #A68F74;
+    border-radius: 30px;
+}
+
+.login-container form{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.login-container input, .login-container button{
+   
+    border-radius: 30px;
+
+}
+
+.login-container button{
+    cursor: pointer;
+    background: linear-gradient(to right, #7a644a, rgb(228,193,167), #7a644a);
+}
+
+@media (max-width: 1024px){
+    .card-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px){
+    .card-container{
+        grid-template-columns: 1fr;
+    }
+}
+
+/*CSS for feedback form*/
+
+.container{
+    width: 70%;
+    max-width: 900px;
+    margin: 50px auto;
+    background-color: #EFEAE4;
+    border-style: solid;
+    border-color: #A68F74;
+    border-width: 6px;
+    border-radius: 35px;
+    padding: 40px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.container:hover{
+    transform: translateY(-5px);
+}
+
+.container h1{
+    text-align: center;
+    font-style: italic;
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+label{
+    display:block;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.add_padding{
+    width: 95%;
+}
+
+.container:hover{
+    transform: translateY(-5px);
+}
+
+.container h1{
+    text-align: center;
+    font-style: italic;
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+label{
+    display:block;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"],
+select{
+    justify-content: center;
+    width: 95%;
+    padding: 12px;
+    background-color: white;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #A68F74;
+    border-radius: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+}
+
+textarea{
+    align-content: center;
+    padding: 12px;
+    background-color: white;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #A68F74;
+    border-radius: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+}
+
+.checkbox-group{
+    background-color: white;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #A68F74;
+    border-radius: 20px;
+    padding: 15px;
+}
+
+
+.price-box{
+    text-align: center;
+    margin-top: 30px;
+    font-size:28px;
+    font-weight:bold;
+    color: #7a644a
+}
+
+button{
+    display: block;
+    margin: 30px auto 0;
+    width: 250px;
+    height:60px;
+    background-color: #A68F74;
+    color: #644a2c;
+    font-size: 22px;
+    font-family: 'Times New Roman', Times, serif;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #7a644a;
+
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+button:hover{
+    transform: scale(1.05);
+}
+
+input:hover, textarea:hover, select:hover{
+    transition: 0.2s ease;
+    border-color: #7a644a;
+}
+select{
+    width: 20%;
+    padding: 12px;
+    background-color: white;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #A68F74;
+    border-radius: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+}
+
+textarea{
+    resize: vertical;
+    min-height: 120px;
+}
+
+
+button:hover{
+    transform: scale(1.05);
+}
+
+input:hover, textarea:hover, select:hover{
+    transition: 0.2s ease;
+    border-color: #7a644a;
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Head START-->
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florist Website</title>
+<!--link to CSS file-->
+    <link rel="stylesheet" href="styleorders.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+<!--Head END-->
+
+<!--Body-->
+<!--<nav id="navigation_bar"></nav>-->
+    <body>
+        <header id="header_bar"><h2 id="web_title">the Orchid Studio</h2></header>
+        <div id="header"></div>
+        <nav id="navigation_bar">
+            <a href="index.html" class="btn">Home-Page<i class="fa fa-home"></i></a>
+            <a href="shopping_cart.html" class="btn">View-Cart<i class="fa fa-shopping-cart"></i></a>   
+        </nav>
+        
+<!--Customization Process-->
+<div class="container">
+<h1>Create your own bouquet:</h1>
+<form action="submit_order.php" method="POST">
+    
+    <label>Name</label>
+    <input type="text" name="customer_name" class="add_padding" required>
+
+    <label>Contact Number</label>
+    <input type="text" name="contact_number" class="add_padding" required>
+
+    <label>Email</label>
+    <input type="email" name="email" class="add_padding" required>
+
+    <label>Delivery Address</label>
+    <textarea name="house_address" class="add_padding" required></textarea>
+
+    <label>Bouquet Size</label>
+    <select name="bouquet_size" id="bouquet_size" required>
+        <option value="">Select Size</option>
+        <option value="S">Small [20 flowers]</option>
+        <option value="M">Medium [35 flowers]</option>
+        <option value="L">Large [49 flowers]</option>
+    </select>
+
+    <label>Add Foliage?</label>
+    <select name="foliage">
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+
+    <label>Select Flowers</label>
+
+    <div class="checkbox-group" required>
+        <input type="checkbox" name="flowers[]" value="Rose">Rose<br>
+        <input type="checkbox" name="flowers[]" value="Peony">Peony<br>
+        <input type="checkbox" name="flowers[]" value="Tiger Lilly">Tiger Lilly<br>
+        <input type="checkbox" name="flowers[]" value="Lilly">Lilly<br>
+        <input type="checkbox" name="flowers[]" value="Hydrangea">Hydrangea<br>
+        <input type="checkbox" name="flowers[]" value="Calla Lilly">Calla Lilly<br>
+        <input type="checkbox" name="flowers[]" value="Orchid">Orchid<br>
+        <input type="checkbox" name="flowers[]" value="Carnation">Carnation<br>
+        <input type="checkbox" name="flowers[]" value="Baby's Breath">Baby's Breath<br>
+        <input type="checkbox" name="flowers[]" value="Tullip">Tullip<br>
+    </div>
+
+    <h3 id="priceCSS">Total Price: £ <span id="price">0</span> (pay on delivery)</h3>
+    <button type="submit">Submit Order</button>
+
+</form>
+</div>
+
+<!--JAVA SCRIPT-->
+<script>
+const sizeDropdown = document.getElementById("bouquet_size");
+const priceDisplay = document.getElementById("price");
+
+sizeDropdown.addEventListener("change", function(){
+    let price = 0;
+    if(this.value === "S"){
+        price = 25
+    }
+
+    if(this.value === "M"){
+        price = 35
+    }
+
+    if(this.value === "L"){
+        price = 45
+    }
+
+    priceDisplay.textContent = price;
+});
+</script>
+<!--JAVA SCRIPT END-->
+</body>
+</html>

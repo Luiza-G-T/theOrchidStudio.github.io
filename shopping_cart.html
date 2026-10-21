@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Head START-->
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florist Website</title>
+<!--link to CSS file-->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+<!--Head END-->
+
+<!--Body-->
+<!--<nav id="navigation_bar"></nav>-->
+    <body>
+        <header id="header_bar"><h2 id="web_title">the Orchid Studio</h2></header>
+        <div id="header"></div>
+        <nav id="navigation_bar">
+            <a href="index.html" class="btn">Home-Page<i class="fa fa-home"></i></a>
+            <a href="order.html" class="btn">Custom-Orders<i class="fa fa-gift"></i></a>
+        </nav>
+
+        <h1 style="text-align: center; color:rgb(255, 255, 255); font-size: 50px;">Shopping Cart</h1>
+<div id="cart-container">
+
+    <h2 id="total" style="text-align: center; color: rgb(167, 139, 107); font-size: 40px;"></h2>
+
+    <h2 id="empty-cart-message" style="text-align: center; color: rgb(0, 0, 0); font-size: 30px;">
+    Your cart is currently empty.
+    </h2>
+
+<div id="cart-items"></div>
+<h2 id="total"></h2>
+
+<form id="checkout-form" action="submit_cart_order.php" method="POST" style="display: none; text-align: center; margin-top: 30px;">
+
+    <input type="text" name="customer_name" placeholder="Full Name" required><br><br>
+    <input type="text" name="contact_number" placeholder="Contact Number" required><br><br>
+    <textarea name="house_address" placeholder="Delivery Address" required></textarea><br><br>
+    <input type="hidden" name="cart_items" id="cart_items">
+    <input type="hidden" name="total_price" id="total_price">
+    <button type="submit"> Place Order</button>
+
+</form>
+
+            <script>
+            window.onload = function(){
+                let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+                const container = document.getElementById("cart-items");
+                const totalDisplay = document.getElementById("total");
+
+                const emptyMessage = document.getElementById("empty-cart-message");
+                const checkoutForm = document.getElementById("checkout-form");
+                const cartItemsInput = document.getElementById("cart_items");
+                const totalInput = document.getElementById("total_price");
+
+                function renderCart() {
+                    container.innerHTML = "";
+                    let total = 0;
+
+                    if (cart.length === 0) {
+                        emptyMessage.style.display = "block";
+                        checkoutForm.style.display = "none";
+                        totalDisplay.innerText = "";
+                        return;
+                    }
+
+                    emptyMessage.style.display = "none";
+                    checkoutForm.style.display = "block";
+
+                    cart.forEach((item, index) => {
+                        total += item.price * item.quantity;
+
+                    container.innerHTML += `
+                    <div style="max-width: 800px; margin: 30px auto; border:10px solid #aa8d6d; border-radius: 200px; text-align: center;">
+                            
+                    <div class="cart-item">
+                        <div class="cart-item-info">
+                            <h3 style="color: #aa8d6d; font-size: 30px" >${item.name}</h3>
+                            <p style="color: #aa8d6d; font-size: 25px">Price: £${item.price}</p>
+                            <p style="color: #aa8d6d; font-size: 25px">Quantity: ${item.quantity}</p>
+                        </div>
+                    </div>
+                    <button onclick="removeItem(${index})">Remove</button>
+                        `;
+                    });
+
+                    totalDisplay.innerText = "Total: £" + total.toFixed(2);
+
+                    cartItemsInput.value = JSON.stringify(cart);
+                    totalInput.value = total.toFixed(2);
+                }
+
+                window.removeItem = function(index){
+                    cart.splice(index, 1);
+                    localStorage.setItem("cart", JSON.stringify(cart));
+                    renderCart();
+                }
+                renderCart();
+            };
+            </script>
+            
+        </div>
+
+</body>
+</html>

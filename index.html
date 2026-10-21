@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Head START-->
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florist Website</title>
+<!--link to CSS file-->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<!--Head END-->
+
+<!--Body-->
+<!--<nav id="navigation_bar"></nav>-->
+    <body>
+        <header id="header_bar"><h2 id="web_title">the Orchid Studio</h2></header>
+        <div id="header"></div>
+        <nav id="navigation_bar">
+            <a href="admin_login.php" class="btn">Admin-Login<i class="fa fa-user"></i></a>
+            <a href="order.html" class="btn">Custom-Orders<i class="fa fa-gift"></i></a>
+            <a href="shopping_cart.html" class="btn">View-Cart<i class="fa fa-shopping-cart"></i></a>
+        </nav>
+        
+<!--Products-->
+
+<div class="card-container">
+
+ <div class="card_wrapper">
+     <div class="card">
+        <img src="Images/PinkBouquet.jpg" alt="Bouquet of Peonies">
+        <div class="card-content">
+            <h3>Aurora Bouquet</h3>
+            <p class="description">Blush Peonies, Baby's Breath & White Delphinium</p>
+            <p class="price">£28.00</p>
+        </div>
+    </div>
+    <button class="add_to_cart" data-id="1">Add to Cart</button>
+</div>
+
+<div class="card_wrapper"> 
+     <div class="card">
+        <img src="Images/PurpleBouquet.jpg" alt="Bouquet of Rosettes">
+        <div class="card-content">
+            <h3>Violetta Bouquet</h3>
+            <p class="description">Violet Delphinium, Cream Rosettes & pink Japonica</p>
+            <p class="price">£28.00</p>
+        </div>
+    </div>
+    <button class="add_to_cart" data-id="2">Add to Cart</button>
+</div>
+
+<div class="card_wrapper"> 
+    <div class="card">
+        <img src="Images/PinkPeonyBouquet.jpg" alt="Bouquet of Peonies">
+        <div class="card-content">
+            <h3>Charlotte Bouquet</h3>
+            <p class="description">Peach Peonies & Foliage</p>
+            <p class="price">£30.00</p>
+        </div>
+    </div>
+    <button class="add_to_cart" data-id="3">Add to Cart</button>
+</div>
+
+<div class="card_wrapper"> 
+    <div class="card">
+        <img src="Images/LilacOrchidBouquet.jpg" alt="Bouquet of Lilac Orchids">
+        <div class="card-content">
+            <h3>Evelina Bouquet</h3>
+            <p class="description">White and Pink Roses & Lilac Orchids</p>
+            <p class="price">£32.00</p>
+        </div>
+    </div>
+    <button class="add_to_cart" data-id="4">Add to Cart</button>
+</div>
+
+<!-- REPLACE WITH A WIDER IMAGE 
+<div class="card_wrapper"> 
+    <div class="card">
+        <img src="Images/OrchidBouquet.jpg" alt="Bouquet of Orchids">
+        <div class="card-content">
+            <h3>Odette Bouquet</h3>
+            <p class="description">White and Coral Orchids</p>
+            <p class="price">£23.00</p>
+        </div>
+    </div>
+    <button class="add_to_cart" data-id="5">Add to Cart</button>
+</div>
+-->
+
+<div class="card_wrapper"> 
+    <div class="card">
+        <img src="Images/BlueBouquet.jpg" alt="Bouquet of Hydrangeas">
+        <div class="card-content">
+            <h3>Duchess Bouquet</h3>
+            <p class="description">Baby Blue Hydrangeas & White Roses</p>
+            <p class="price">£35.00</p>
+        </div>
+    </div>
+    <button class="add_to_cart" data-id="6">Add to Cart</button>
+</div>
+
+<div class="card_wrapper"> 
+     <div class="card">
+        <img src="Images/PinkOrchidBouquet.jpg" alt="Bouquet of Pink Orchids">
+        <div class="card-content">
+            <h3>Penelope Bouquet</h3>
+            <p class="description">Mauve Orchids, White Roses & Lilac Delphinium</p>
+            <p class="price">£28.00</p>
+        </div>
+    </div>
+    <button class="add_to_cart" data-id="7">Add to Cart</button>
+</div>
+<!--
+<div class="card_wrapper"> 
+    <div class="card">
+        <img src="Images/PurpleOrchidBouquet.jpg" alt="Bouquet of Purple Orchids">
+        <div class="card-content">
+            <h3>Daphne Bouquet</h3>
+            <p class="description">Jumbo Violet Dendrobium Orchids</p>
+            <p class="price">£25.00</p>
+        </div>
+    </div>
+    <button class="add_to_cart" data-id="8">Add to Cart</button>
+</div>
+-->
+
+</div>
+
+<div class="container">
+    <div id="feedback-message"></div>
+    <h2 id="footerheading">We value your feedback</h2>
+    <form id="feedback-form" action="submit_feedback.php" method="POST">
+        <label class="">Name</label>
+        <input type="text" name="name" class="add_padding" required>
+        <label for="message">Tell us about your experience:</label>
+        <textarea name="feedback" class="add_padding" required></textarea>
+        <div class="add_padding">
+            <label for="rating">How was your experience with the Orchid Studio?</label>
+            <select id="rating" name="rating" class="add_padding"required>
+                <option value="">Choose one</option>
+                <option value="1">Excellent</option>
+                <option value="2">Good</option>
+                <option value="3">Okay</option>
+                <option value="4">Bad</option>
+            </select>
+        </div>
+        <button type="submit">Upload Feedback</button>
+    </form>
+</div>
+
+<!--Java Script File Sources:-->
+<script src="cart.js"></script>
+<script src="feedback.js"></script>
+
+</body>
+</html>
